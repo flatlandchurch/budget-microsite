@@ -6,6 +6,9 @@ document.getElementById('form').addEventListener('submit', (e) => {
   fetch('https://api.flatlandchurch.com/v2/emails/christmas-budget?key=202f1c42-7054-46ee-8ca2-ddc85f9c789b', {
     method: 'POST',
     body: JSON.stringify({ email }),
+    headers: {
+      'content-type': 'application/json',
+    }
   })
     .then(() => {
       document.getElementById('form').style.display = 'none';
